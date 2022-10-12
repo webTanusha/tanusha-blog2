@@ -1,7 +1,8 @@
-import TagBar from "./TagBar.jsx"
-import dateFormatter from "../utils/dateFormatter.js"
+import TagBar from "./TagBar.jsx";
+import dateFormatter from "../utils/dateFormatter.js";
 
 export default function BlogPostPreview({ post }) {
+  const date = new Date(post.frontmatter.pubDate);
   return (
     <article class="blog-preview-wrapper">
       <header
@@ -15,7 +16,7 @@ export default function BlogPostPreview({ post }) {
         }}
       >
         <a href={post.url} style={{ display: "inline-block", width: "100%" }}>
-          <h1 className="preview-title">{post.title}</h1>
+          <h1 className="preview-title">{post.frontmatter.title}</h1>
         </a>
         <p
           style={{
@@ -24,17 +25,17 @@ export default function BlogPostPreview({ post }) {
             color: "var(--theme-text-lighter)",
           }}
         >
-          {dateFormatter.format(post.date)}
+          {dateFormatter.format(date)}
         </p>
         <TagBar
           marginTop=".25em"
-          tags={post.tags.map(tag => {
-            return { name: tag }
+          tags={post.frontmatter.tags.map((tag) => {
+            return { name: tag };
           })}
         />
       </header>
-      <p>{post.description}</p>
-      <a href={post.url}>Read more</a>
+      <p>{post.frontmatter.description}</p>
+      <a href={post.url}>Читать дальше</a>
     </article>
-  )
+  );
 }

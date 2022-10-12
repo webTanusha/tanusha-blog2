@@ -7,8 +7,6 @@ import "prismjs/plugins/line-highlight/prism-line-highlight.css";
 import ConvertkitForm from "../components/ConvertkitForm.astro";
 import UserSettingsLoad from "../components/UserSettingsLoad.astro";
 import dateFormatter from "../utils/dateFormatter.js";
-import TagBar from "../components/TagBar.jsx";
-import LinkButtons from "../components/LinkButtons.jsx";
 
 export interface Props {
   content: {
@@ -73,19 +71,11 @@ const date = dateFormatter.format(new Date(pubDate ? pubDate : new Date()));
     <UserSettingsLoad />
     <ConvertkitForm />
     <Header />
-    <main class="layout">
+    <main class="wrapper layout">
       <article class="content">
         {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
         <h1 class="title">{title}</h1>
         {date && <time class="publish-date">{date}</time>}
-        <!-- <div style="margin-bottom: 1rem">
-          <TagBar
-            client:load
-            tags={tags.map((tag) => {
-              return { name: tag };
-            })}
-          />
-        </div> -->
         <slot />
       </article>
     </main>
