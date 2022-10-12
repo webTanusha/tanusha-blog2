@@ -1,6 +1,6 @@
 export default new Intl.DateTimeFormat(undefined, {
   timeZone: "UTC",
-  month: "long",
+  month: "short",
   year: "numeric",
   day: "numeric",
-})
+});
