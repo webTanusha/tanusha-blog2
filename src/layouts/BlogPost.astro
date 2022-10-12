@@ -2,8 +2,6 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import "prismjs/themes/prism-okaidia.css";
-import "prismjs/plugins/line-highlight/prism-line-highlight.css";
 import ConvertkitForm from "../components/ConvertkitForm.astro";
 import UserSettingsLoad from "../components/UserSettingsLoad.astro";
 import dateFormatter from "../utils/dateFormatter.js";
@@ -27,15 +25,11 @@ const {
 const date = dateFormatter.format(new Date(pubDate ? pubDate : new Date()));
 ---
 
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} permalink={permalink} />
     <style>
-      .layout {
-        display: flex;
-        justify-content: center;
-        text-align: center;
-      }
       .content {
         margin: 0 auto 8rem;
       }
@@ -58,6 +52,10 @@ const date = dateFormatter.format(new Date(pubDate ? pubDate : new Date()));
         font-size: 2.25rem;
         font-weight: 700;
       }
+      li {
+        padding-right: 0.5rem;
+        list-style-position: inside;
+      }
       @media (max-width: 50em) {
         .title {
           font-size: 1.75rem;
@@ -70,8 +68,8 @@ const date = dateFormatter.format(new Date(pubDate ? pubDate : new Date()));
   <body>
     <UserSettingsLoad />
     <ConvertkitForm />
-    <Header />
-    <main class="wrapper layout">
+    <Header title={title} />
+    <main class="wrapper main">
       <article class="content">
         {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
         <h1 class="title">{title}</h1>
