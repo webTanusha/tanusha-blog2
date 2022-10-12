@@ -1,7 +1,7 @@
 ---
 layout: "../../../layouts/BlogPost.astro"
 title: "Эти советы психолога при депрессии вернут тебя к жизни."
-date: "2022-10-07"
+pubDate: "2022-10-07"
 description: "В мире нет человека, который не слышал бы о симптомах депрессии. Мало того, почти половина жителей Земли регулярно страдает от этой болезни."
 tags: ["Совет"]
 heroImage: "/articleAssets/2022-10/life-is-beautiful/undraw_meditating_re_aiqa.svg"

@@ -2,56 +2,93 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import "prismjs/themes/prism-okaidia.css";
+import "prismjs/plugins/line-highlight/prism-line-highlight.css";
+import ConvertkitForm from "../components/ConvertkitForm.astro";
+import UserSettingsLoad from "../components/UserSettingsLoad.astro";
+import dateFormatter from "../utils/dateFormatter.js";
+import TagBar from "../components/TagBar.jsx";
+import LinkButtons from "../components/LinkButtons.jsx";
 
 export interface Props {
-	content: {
-		title: string;
-		description: string;
-		pubDate?: string;
-		updatedDate?: string;
-		heroImage?: string;
-	};
+  content: {
+    title: string;
+    description: string;
+    pubDate?: Date;
+    updatedDate?: Date;
+    heroImage?: string;
+    permalink: string;
+    tags: string[];
+  };
 }
 
 const {
-	content: { title, description, pubDate, updatedDate, heroImage },
+  content: { title, description, pubDate, heroImage, permalink, tags },
 } = Astro.props;
+
+const date = dateFormatter.format(new Date(pubDate ? pubDate : new Date()));
 ---
 
 <html lang="en">
-	<head>
-		<BaseHead title={title} description={description} />
-		<style>
-			.title {
-				font-size: 2em;
-				margin: 0.25em 0 0;
-			}
-			hr {
-  				border-top: 1px solid #DDD;
-				margin: 1rem 0;
-			}
-		</style>
-	</head>
+  <head>
+    <BaseHead title={title} description={description} permalink={permalink} />
+    <style>
+      .layout {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+      }
+      .content {
+        margin: 0 auto 8rem;
+      }
+      .content :global(main > * + :not(h2):not(h3)) {
+        margin-top: 1rem;
+      }
+      .content :global(h2) {
+        margin-top: 4rem;
+      }
+      .title,
+      .publish-date {
+        margin: 0;
+        align-self: flex-start;
+        justify-self: flex-start;
+      }
+      .publish-date {
+        color: var(--theme-text-lighter);
+      }
+      .title {
+        font-size: 2.25rem;
+        font-weight: 700;
+      }
+      @media (max-width: 50em) {
+        .title {
+          font-size: 1.75rem;
+          overflow-wrap: break-word;
+        }
+      }
+    </style>
+  </head>
 
-	<body>
-		<Header />
-		<main>
-			<article>
-				{heroImage && (
-					<img
-						width={720}
-						height={360}
-						src={heroImage}
-						alt=""
-					/>
-				)}
-				<h1 class="title">{title}</h1>
-				{pubDate && <time>{pubDate}</time>}
-				{updatedDate && <div>Last updated on <time>{updatedDate}</time></div>}
-				<hr/>
-				<slot />
-			</article>
-		</main>
-		<Footer />
-	</body>
+  <body>
+    <UserSettingsLoad />
+    <ConvertkitForm />
+    <Header />
+    <main class="layout">
+      <article class="content">
+        {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
+        <h1 class="title">{title}</h1>
+        {date && <time class="publish-date">{date}</time>}
+        <!-- <div style="margin-bottom: 1rem">
+          <TagBar
+            client:load
+            tags={tags.map((tag) => {
+              return { name: tag };
+            })}
+          />
+        </div> -->
+        <slot />
+      </article>
+    </main>
+    <Footer />
+  </body>
 </html>

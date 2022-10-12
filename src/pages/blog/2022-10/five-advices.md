@@ -1,7 +1,7 @@
 ---
 layout: "../../../layouts/BlogPost.astro"
 title: "5 советов как избавиться от страха!"
-date: "2022-09-15"
+pubDate: "2022-09-15"
 description: "Научитесь переключаться, не застревайте на прошлых ситуациях. Не переживайте слишком долго и не возвращайтесь к одним и тем же событиям."
 tags: ["Совет"]
 heroImage: "/articleAssets/2022-10/five-advices/undraw_pilates_gpdb.svg"
