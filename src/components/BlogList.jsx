@@ -48,13 +48,11 @@ export default function BlogList({ posts }) {
     <div class="wrapper">
       <SearchBar query={searchQuery} onChange={handleSearchChange} />
       <TagBar tags={tags} onTagSelect={handleTagSelect} />
-      {/* <main className="content"> */}
       <section className="blog-post-list" aria-label="Blog post list">
         {filteredPosts.map((p) => (
           <BlogPostPreview post={p} />
         ))}
       </section>
-      {/* </main> */}
     </div>
   );
 }

@@ -40,11 +40,18 @@ body {
 }
 .main {
   grid-area: mn;
-  display: flex;
-  flex-direction: column;
 }
 .footer {
   grid-area: ft;
+  justify-content: center;
+}
+.home {
+  flex-direction: row;
+  justify-content: baseline;
+  align-items: center;
+  background-image: url(/undraw_powerful_re_frhr.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 .wrapper {
