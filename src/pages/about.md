@@ -1,9 +1,9 @@
 ---
 layout: "../layouts/BlogPost.astro"
-title: "About Me"
-description: "Lorem ipsum dolor sit amet"
-updatedDate: "August 08 2022"
+title: "Давайте знакомиться"
+description: "Давайте знакомиться"
+pubDate: "january 05 2022"
 heroImage: "/undraw_powerful_re_frhr.svg"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+Меня зовут `Иванова Татьяна`. Я Социальный Психолог. Посвятила 5 лет учебe в университе на факультете `Психология`. Поняв, что я хочу знать о психологии еще больше, прошла обучение у известного зарубежного психолога `Kain Ramsay`. И вот уже много лет я лечу человеческие души и сердца. Я работаю под девизом `Здоровый дух - счастливая жизнь`.
