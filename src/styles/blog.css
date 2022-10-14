@@ -40,7 +40,18 @@ body {
 }
 .main {
   grid-area: mn;
+  display: flex;
 }
+
+.main p {
+  text-align: justify;
+  text-indent: 1.5em;
+}
+
+.main img {
+  max-width: 95%;
+}
+
 ol li {
   list-style-position: inside;
   padding-left: 1.5rem;
