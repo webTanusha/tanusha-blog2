@@ -65,9 +65,9 @@ ol li {
   flex-direction: row;
   justify-content: baseline;
   align-items: center;
-  background-image: url(/undraw_powerful_re_frhr.svg);
-  background-size: 100%;
-  background-repeat: no-repeat;
+  /* background-image: url(/undraw_powerful_re_frhr.svg); */
+  /* background-size: 100%; */
+  /* background-repeat: no-repeat; */
 }
 .home .end {
   align-self: flex-end;
