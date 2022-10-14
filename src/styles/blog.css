@@ -40,7 +40,18 @@ body {
 }
 .main {
   grid-area: mn;
+  display: flex;
 }
+
+.main p {
+  text-align: justify;
+  text-indent: 1.5em;
+}
+
+.main img {
+  max-width: 95%;
+}
+
 ol li {
   list-style-position: inside;
   padding-left: 1.5rem;
@@ -54,9 +65,9 @@ ol li {
   flex-direction: row;
   justify-content: baseline;
   align-items: center;
-  background-image: url(/undraw_powerful_re_frhr.svg);
-  background-size: 100%;
-  background-repeat: no-repeat;
+  /* background-image: url(/undraw_powerful_re_frhr.svg); */
+  /* background-size: 100%; */
+  /* background-repeat: no-repeat; */
 }
 .home .end {
   align-self: flex-end;
